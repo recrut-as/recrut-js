@@ -1,19 +1,19 @@
 {
-  "name": "javascript-api",
-  "version": "0.0.2",
-  "description": "",
+  "name": "recrut-js",
+  "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "test": "yarn test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/recrut-as/JavaScript-API.git"
+    "url": "git+https://github.com/recrut-as/recrut-js.git"
   },
   "author": "halvorboe",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/recrut-as/JavaScript-API/issues"
+    "url": "https://github.com/recrut-as/recrut-js/issues"
   },
-  "homepage": "https://github.com/recrut-as/JavaScript-API#readme"
+  "homepage": "https://github.com/recrut-as/recrut-js#readme",
+  "description": ""
 }
