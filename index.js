@@ -1,5 +1,5 @@
 
 
 export default () => {
-    console.log('Hello, npm!');
+    return 'Hello, npm!';
 }
