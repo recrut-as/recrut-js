@@ -1,4 +1,4 @@
-import { NO_AUTH, BASE } from '../constants';
+import {NO_AUTH, BASE} from '../constants';
 import {get, post, put, del, postFile, putFile, GET, POST, PUT, DELETE, POSTFILE, PUTFILE} from './methods';
 import Token from './token';
 import APIResponse from './response';

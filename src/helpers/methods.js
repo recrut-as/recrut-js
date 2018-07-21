@@ -1,4 +1,4 @@
-import { FORMAT } from '../constants';
+import {FORMAT} from '../constants';
 import token from './token';
 
 // Generalized get and post methods, made with this api in mind.
