@@ -1,10 +1,6 @@
 {
   "name": "recrut-js",
-  "version": "0.0.10",
-  "main": "src/index.js",
-  "scripts": {
-    "test": "jest"
-  },
+  "version": "0.0.20",
   "repository": "git+https://github.com/recrut-as/recrut-js.git",
   "author": "halvorboe",
   "license": "MIT",
@@ -15,9 +11,17 @@
   "description": "API for recrut",
   "private": false,
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-latest": "^6.24.1",
     "jest": "^23.4.1"
   },
   "dependencies": {
     "universal-cookie": "^2.2.0"
+  },
+  "main": "./lib",
+  "scripts": {
+    "build": "babel src --out-dir lib",
+    "test": "jest"
   }
 }
