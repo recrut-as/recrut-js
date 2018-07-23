@@ -1,10 +1,10 @@
-var { POST } = require('../helpers/methods');
-var { NO_AUTH } = require( '../constants');
-var APIRequest = require('../helpers/request');
+const { POST } = require('../helpers/methods');
+const { NO_AUTH } = require( '../constants');
+const APIRequest = require('../helpers/request');
 
-var token = require('../helpers/token');
+const token = require('../helpers/token');
 
-module.exports = {
+export default {
   register: (email, password) => {
     return new APIRequest(
       POST,

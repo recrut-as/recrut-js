@@ -1,11 +1,11 @@
-var Cookies = require('universal-cookie');
+const Cookies = require('universal-cookie');
 
-var cookies = new Cookies();
+const cookies = new Cookies();
 
-var ACCESS_TOKEN_LOCATION = 'access_token';
-var REFRESH_TOKEN_LOCATION = 'refresh_token';
+const ACCESS_TOKEN_LOCATION = 'access_token';
+const REFRESH_TOKEN_LOCATION = 'refresh_token';
 
-module.exports = {
+export default {
   access() {
     return cookies.get(ACCESS_TOKEN_LOCATION);
   },

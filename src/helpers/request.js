@@ -1,9 +1,9 @@
-var {NO_AUTH, BASE} = require('../constants');
-var {get, post, put, del, postFile, putFile, GET, POST, PUT, DELETE, POSTFILE, PUTFILE} = require('./methods');
-var Token = require('./token');
-var APIResponse = require('./response');
+const {NO_AUTH, BASE} = require('../constants');
+const {get, post, put, del, postFile, putFile, GET, POST, PUT, DELETE, POSTFILE, PUTFILE} = require('./methods');
+const Token = require('./token');
+const APIResponse = require('./response');
 
-module.exports = class APIRequest {
+export default class APIRequest {
   constructor(method, url, data = {}, args = {}) {
     this.method = method;
     this.data = data;

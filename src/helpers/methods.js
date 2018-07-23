@@ -1,16 +1,15 @@
-var {FORMAT} = require('../constants');
-var token = require('./token');
+import { FORMAT } from '../constants';
+import token from './token';
 
 // Generalized get and post methods, made with this api in mind.
+export const GET = 'GET';
+export const POST = 'POST';
+export const PUT = 'PUT';
+export const DELETE = 'DELETE';
+export const POSTFILE = 'POSTFILE';
+export const PUTFILE = 'PUTFILE';
 
-module.exports.GET = 'GET';
-module.exports.POST = 'POST';
-module.exports.PUT = 'PUT';
-module.exports.DELETE = 'DELETE';
-module.exports.POSTFILE = 'POSTFILE';
-module.exports.PUTFILE = 'PUTFILE';
-
-module.exports.get = (url, headers, args) => {
+export const get = (url, headers, args) => {
   return fetch(url + FORMAT + args, {
     method: 'GET',
     headers: headers,
@@ -19,7 +18,7 @@ module.exports.get = (url, headers, args) => {
   });
 };
 
-module.exports.post = (url, headers, data) => {
+export const post = (url, headers, data) => {
   return fetch(url, {
     method: 'POST',
     headers: headers,
@@ -27,7 +26,7 @@ module.exports.post = (url, headers, data) => {
   });
 };
 
-module.exports.put = (url, headers, data) => {
+export const put = (url, headers, data) => {
   return fetch(url, {
     method: 'PUT',
     headers: headers,
@@ -35,7 +34,7 @@ module.exports.put = (url, headers, data) => {
   });
 };
 
-module.exports.del = (url, headers, data) => {
+export const del = (url, headers, data) => {
   return fetch(url, {
     method: 'DELETE',
     headers: headers,
@@ -49,7 +48,7 @@ module.exports.del = (url, headers, data) => {
     });
 };
 
-module.exports.postFile = (url, data) => {
+export const postFile = (url, data) => {
   // Set data
   let fileData = new FormData();
   for (let key in data) {
@@ -66,7 +65,7 @@ module.exports.postFile = (url, data) => {
   return request;
 };
 
-module.exports.putFile = (url, data) => {
+export const putFile = (url, data) => {
   // Set data
   let fileData = new FormData();
   for (let key in data) {

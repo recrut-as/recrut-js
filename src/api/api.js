@@ -3,7 +3,7 @@ const APIRequest = require('../helpers/request');
 
 // Api hooks for the app
 
-module.exports = {
+export default {
   fetchRecommendations: () => {
     return new APIRequest(GET, 'recommended/');
   },

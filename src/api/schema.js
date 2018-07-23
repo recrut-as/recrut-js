@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   'v1/authentication/token/': {
     access_token: 'Hello, token!',
     refresh_token: 'Hello, refresh... token?',
