@@ -1,6 +1,6 @@
 {
   "name": "recrut-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
   "scripts": {
     "test": "jest"
@@ -16,5 +16,8 @@
   "private": false,
   "devDependencies": {
     "jest": "^23.4.1"
+  },
+  "dependencies": {
+    "universal-cookie": "^2.2.0"
   }
 }
