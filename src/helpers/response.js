@@ -26,6 +26,6 @@ module.exports = class APIResponse {
   }
 
   then() {
-    return this.response.then((response) => response.json());
+    return this.response.then((response) => (response)? response.json() : null);
   }
 }
