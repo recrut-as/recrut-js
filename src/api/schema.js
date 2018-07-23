@@ -15,11 +15,9 @@ module.exports = {
     {
       id: '0366cc28-940f-e8da-0591-d741282273b9',
       header: 'Houseguest (1994)',
-      body:
-        'Drug rise girl act show find suddenly. Else city gas leg activity job. Republican city member push medical and attorney someone.',
+      body: 'Drug rise girl act show find suddenly. Else city gas leg activity job. Republican city member push medical and attorney someone.',
       summary: 'Rule bank five I defense sea.',
-      image:
-        'https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg',
+      image: 'https://www.ienglishstatus.com/wp-content/uploads/2018/04/Anonymous-Whatsapp-profile-picture.jpg',
       kind: 2,
       industy: 'beat',
       field: 'under',
@@ -27,3 +25,4 @@ module.exports = {
     },
   ],
 };
+

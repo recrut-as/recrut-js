@@ -40,11 +40,11 @@ module.exports = class APIRequest {
     } else {
       return null;
     }
-    return request.then(this.handler);
+    return request;
   }
 
   mockResponse(callbackData) {
     const request = Promise.resolve(callbackData);
-    return request.then(this.handler);
+    return request;
   }
 }
