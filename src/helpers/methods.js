@@ -1,5 +1,5 @@
-import {FORMAT} from '../constants';
-import token from './token';
+const {FORMAT} = require('../constants');
+const token = require('./token');
 
 // Generalized get and post methods, made with this api in mind.
 export const GET = 'GET';

@@ -1,7 +1,7 @@
-import {NO_AUTH, BASE} from '../constants';
-import {get, post, put, del, postFile, putFile, GET, POST, PUT, DELETE, POSTFILE, PUTFILE} from './methods';
-import Token from './token';
-import APIResponse from './response';
+const {NO_AUTH, BASE} = require('../constants');
+const {get, post, put, del, postFile, putFile, GET, POST, PUT, DELETE, POSTFILE, PUTFILE} = require('./methods');
+const Token = require('./token');
+const APIResponse = require('./response');
 
 export default class APIRequest {
   constructor(method, url, data = {}, args = {}) {
