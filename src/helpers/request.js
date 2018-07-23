@@ -40,7 +40,7 @@ module.exports = class APIRequest {
     } else {
       return null;
     }
-    return request;
+    return request.then(this.handler);
   }
 
   mockResponse(callbackData) {
