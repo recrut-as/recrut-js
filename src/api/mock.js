@@ -2,7 +2,7 @@ const schema = require('./schema');
 const {GET, POST} = require('../helpers/methods');
 const APIRequest = require('../helpers/request');
 
-export default {
+module.exports =  {
   convertAccessToken: (accessToken) => {
     if (
       accessToken == schema['v1/authentication/token/convert/'].access_token

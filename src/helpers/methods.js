@@ -2,14 +2,15 @@ const {FORMAT} = require('../constants');
 const token = require('./token');
 
 // Generalized get and post methods, made with this api in mind.
-export const GET = 'GET';
-export const POST = 'POST';
-export const PUT = 'PUT';
-export const DELETE = 'DELETE';
-export const POSTFILE = 'POSTFILE';
-export const PUTFILE = 'PUTFILE';
 
-export const get = (url, headers, args) => {
+module.exports.GET = 'GET';
+module.exports.POST = 'POST';
+module.exports.PUT = 'PUT';
+module.exports.DELETE = 'DELETE';
+module.exports.POSTFILE = 'POSTFILE';
+module.exports.PUTFILE = 'PUTFILE';
+
+module.exports.get = (url, headers, args) => {
   return fetch(url + FORMAT + args, {
     method: 'GET',
     headers: headers,
@@ -18,7 +19,7 @@ export const get = (url, headers, args) => {
   });
 };
 
-export const post = (url, headers, data) => {
+module.exports.post = (url, headers, data) => {
   return fetch(url, {
     method: 'POST',
     headers: headers,
@@ -26,7 +27,7 @@ export const post = (url, headers, data) => {
   });
 };
 
-export const put = (url, headers, data) => {
+module.exports.put = (url, headers, data) => {
   return fetch(url, {
     method: 'PUT',
     headers: headers,
@@ -34,7 +35,7 @@ export const put = (url, headers, data) => {
   });
 };
 
-export const del = (url, headers, data) => {
+module.exports.del = (url, headers, data) => {
   return fetch(url, {
     method: 'DELETE',
     headers: headers,
@@ -48,7 +49,7 @@ export const del = (url, headers, data) => {
     });
 };
 
-export const postFile = (url, data) => {
+module.exports.postFile = (url, data) => {
   // Set data
   let fileData = new FormData();
   for (let key in data) {
@@ -65,7 +66,7 @@ export const postFile = (url, data) => {
   return request;
 };
 
-export const putFile = (url, data) => {
+module.exports.putFile = (url, data) => {
   // Set data
   let fileData = new FormData();
   for (let key in data) {

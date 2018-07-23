@@ -1,5 +1,5 @@
 // Constants used in the module
-export const API = 'https://api.recrut.no/';
-export const BASE = API + 'v1/';
-export const FORMAT = '?format=json';
-export const NO_AUTH = 'NO_AUTH';
+module.exports.API = 'https://api.recrut.no/';
+module.exports.BASE = API + 'v1/';
+module.exports.FORMAT = '?format=json';
+module.exports.NO_AUTH = 'NO_AUTH';

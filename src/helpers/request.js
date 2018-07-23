@@ -3,7 +3,7 @@ const {get, post, put, del, postFile, putFile, GET, POST, PUT, DELETE, POSTFILE,
 const Token = require('./token');
 const APIResponse = require('./response');
 
-export default class APIRequest {
+module.exports = class APIRequest {
   constructor(method, url, data = {}, args = {}) {
     this.method = method;
     this.data = data;

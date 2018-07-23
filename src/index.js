@@ -1,5 +1,5 @@
 
 
-export default () => {
+module.exports = () => {
     return 'Hello, npm!';
 }

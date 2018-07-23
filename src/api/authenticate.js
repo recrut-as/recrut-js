@@ -4,7 +4,7 @@ const APIRequest = require('../helpers/request');
 
 const token = require('../helpers/token');
 
-export default {
+module.exports = {
   register: (email, password) => {
     return new APIRequest(
       POST,

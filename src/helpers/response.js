@@ -1,4 +1,4 @@
-export default class APIResponse {
+module.exports = class APIResponse {
   constructor(response) {
     this.response = response;
 

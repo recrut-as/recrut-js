@@ -5,7 +5,7 @@ const cookies = new Cookies();
 const ACCESS_TOKEN_LOCATION = 'access_token';
 const REFRESH_TOKEN_LOCATION = 'refresh_token';
 
-export default {
+module.exports = {
   access() {
     return cookies.get(ACCESS_TOKEN_LOCATION);
   },
