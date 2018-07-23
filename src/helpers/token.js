@@ -5,6 +5,12 @@ const cookies = new Cookies();
 const ACCESS_TOKEN_LOCATION = 'access_token';
 const REFRESH_TOKEN_LOCATION = 'refresh_token';
 
+const getExpireDate = () => {
+  const date = new Date();
+  date.setDate(date.getDate() + 1);
+  return date;
+}
+
 module.exports = {
   access() {
     return cookies.get(ACCESS_TOKEN_LOCATION);
@@ -15,8 +21,8 @@ module.exports = {
   },
 
   set(access, refresh) {
-    cookies.set(ACCESS_TOKEN_LOCATION, access, { path: '/' });
-    cookies.set(REFRESH_TOKEN_LOCATION, refresh, { path: '/' });
+    cookies.set(ACCESS_TOKEN_LOCATION, access, { path: '/', expires: getExpireDate()});
+    cookies.set(REFRESH_TOKEN_LOCATION, refresh, { path: '/', expires: getExpireDate()});
   },
 
   remove() {
