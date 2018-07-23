@@ -1,5 +1,5 @@
-const { POST, GET, PUT, DELETE, POSTFILE, PUTFILE } = require('../helpers/methods');
-const APIRequest = require('../helpers/request');
+import { POST, GET, PUT, DELETE, POSTFILE, PUTFILE } from '../helpers/methods';
+import APIRequest from '../helpers/request';
 
 // Api hooks for the app
 

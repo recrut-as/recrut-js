@@ -1,6 +1,6 @@
-const schema = require('./schema');
-const {GET, POST} = require('../helpers/methods');
-const APIRequest = require('../helpers/request');
+import schema from './schema';
+import {GET, POST} from '../helpers/methods';
+import APIRequest from '../helpers/request';
 
 export default {
   convertAccessToken: (accessToken) => {

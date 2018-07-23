@@ -1,8 +1,8 @@
-const { POST } = require('../helpers/methods');
-const { NO_AUTH } = require( '../constants');
-const APIRequest = require('../helpers/request');
+import { POST } from '../helpers/methods';
+import { NO_AUTH } from  '../constants';
+import APIRequest from '../helpers/request';
 
-const token = require('../helpers/token');
+import token from '../helpers/token';
 
 export default {
   register: (email, password) => {
