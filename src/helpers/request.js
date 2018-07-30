@@ -24,7 +24,7 @@ export default class APIRequest {
     if (this.method === GET) {
       let args = '';
       for (let key in this.data) {
-        if(Array.isArray(key) ) {
+        if(Array.isArray(data[key]) ) {
           for(let value in key) {
             args += '&' + key + '=' + value;
           }
