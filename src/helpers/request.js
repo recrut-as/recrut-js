@@ -26,7 +26,7 @@ export default class APIRequest {
       for (let key in this.data) {
         if(Array.isArray(this.data[key]) ) {
           for(let value in this.data[key]) {
-            args += '&' + key + '=' + value;
+            args += '&' + key + '=' + this.data[key][value];
           }
         } else {
           args += '&' + key + '=' + this.data[key];
