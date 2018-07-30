@@ -8,7 +8,7 @@ export default {
     return new APIRequest(GET, 'recommended/');
   },
   fetchPostings: (query) => {
-    return new APIRequest(GET, 'posting/', {...query});
+    return new APIRequest(GET, 'posting/', query);
   },
   fetchVotes: () => {
     return new APIRequest(GET, 'decision/');

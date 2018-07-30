@@ -24,7 +24,13 @@ export default class APIRequest {
     if (this.method === GET) {
       let args = '';
       for (let key in this.data) {
-        args += '&' + key + '=' + this.data[key];
+        if(typeof(key) === 'array') {
+          for(let value in key) {
+            args += '&' + key + '=' + this.data[key][value];
+          }
+        } else {
+          args += '&' + key + '=' + this.data[key];
+        }
       }
       request = new APIResponse(get(BASE + this.url, this.headers, args));
     } else if (this.method === POST) {
