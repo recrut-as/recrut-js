@@ -16,8 +16,8 @@ export default {
   fetchProfile: () => {
     return new APIRequest(GET, 'account/me/');
   },
-  fetchOrganizations: () => {
-    return new APIRequest(GET, 'organization/');
+  fetchOrganizations: (name) => {
+    return new APIRequest(GET, 'organization/', {name: name});
   },
   putVote: (post, vote) => {
     return new APIRequest(POST, 'decision/', {posting: post.id, value: vote});
