@@ -37,8 +37,14 @@ export default {
   deleteProfileInfo: (dataType, data) => {
     return new APIRequest(DELETE, 'profile/'.concat(dataType, '/'), data);
   },
+
+  // Can change account info with a file (profileImage)
   putAccountInfo: (data) => {
     return new APIRequest(PUTFILE, 'account/me/', data);
+  },
+  // Can not change account info with a file (profileImage)
+  putAccount: (data) => {
+    return new APIRequest(PUT, 'account/me/', data);
   },
   putPostingInfo: (id, data) => {
     return new APIRequest(PUT, 'decision/'.concat(id, '/'), data);
