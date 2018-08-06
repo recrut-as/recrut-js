@@ -52,4 +52,15 @@ export default {
   changePassword: (passwordData) => {
     return new APIRequest(POST, 'account/password/', passwordData);
   },
+
+  // Sharing and messages
+  getSharing: () => {
+    return new APIRequest(GET, 'sharing/');
+  },
+  putSharing: (data) => {
+    return new APIRequest(POST, 'sharing/', data);
+  },
+  putMessage: (data) => {
+    return new APIRequest(POST, 'message/', data);
+  },
 };
