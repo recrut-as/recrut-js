@@ -26,6 +26,8 @@ export default class APIResponse {
   }
 
   then() {
-    return this.response.then((response) => (response)? response.json() : null);
+    return this.response.then((response) => {
+      return ((response && response.json)? response.json() : null);
+    });
   }
 }

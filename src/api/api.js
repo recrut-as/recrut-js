@@ -55,8 +55,11 @@ export default {
   },
 
   // Sharing and messages
-  fetchSharing: () => {
+  fetchSharings: () => {
     return new APIRequest(GET, 'sharing/');
+  },
+  fetchSharing: (id) => {
+    return new APIRequest(GET, 'sharing/'.concat(id, '/'));
   },
   putSharing: (data) => {
     return new APIRequest(POST, 'sharing/', data);
