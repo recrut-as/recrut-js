@@ -61,8 +61,8 @@ export default {
   putSharing: (data) => {
     return new APIRequest(POST, 'sharing/', data);
   },
-  deleteSharing: (data) => {
-    return new APIRequest(DELETE, 'sharing/', data);
+  deleteSharing: (id) => {
+    return new APIRequest(DELETE, 'sharing/'.concat(id, '/'));
   },
   putMessage: (data) => {
     return new APIRequest(POST, 'message/', data);
