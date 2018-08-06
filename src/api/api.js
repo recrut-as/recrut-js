@@ -1,5 +1,6 @@
 import { POST, GET, PUT, DELETE, POSTFILE, PUTFILE } from '../helpers/methods';
 import APIRequest from '../helpers/request';
+import { get } from 'http';
 
 // Api hooks for the app
 
@@ -63,4 +64,7 @@ export default {
   putMessage: (data) => {
     return new APIRequest(POST, 'message/', data);
   },
+  fetchShareable: () => {
+    return new APIRequest(GET, 'shareable/');
+  }
 };
