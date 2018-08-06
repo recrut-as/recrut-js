@@ -4,12 +4,12 @@ export default class APIResponse {
 
     this.response.then((data) => {
       if (!data) {
-        return;
+        data = {};
       }
 
       this.isError = !data.ok;
       this.status = data.status;
-      return data;
+      return (data.json)? data.json() : data;
     });
   }
 
@@ -25,9 +25,7 @@ export default class APIResponse {
     return this.status !== 401;
   }
 
-  then() {
-    return this.response.then((response) => {
-      return ((response && response.json)? response.json() : null);
-    });
+  then(method) {
+    return this.response.then(method);
   }
 }

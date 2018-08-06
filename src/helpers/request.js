@@ -46,7 +46,7 @@ export default class APIRequest {
     } else {
       return null;
     }
-    return request.then(this.handler);
+    return request;
   }
 
   mockResponse(callbackData) {
