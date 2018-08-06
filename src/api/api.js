@@ -61,6 +61,9 @@ export default {
   putSharing: (data) => {
     return new APIRequest(POST, 'sharing/', data);
   },
+  deleteSharing: (data) => {
+    return new APIRequest(DELETE, 'sharing/', data);
+  },
   putMessage: (data) => {
     return new APIRequest(POST, 'message/', data);
   },
