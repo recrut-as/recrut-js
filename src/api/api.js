@@ -27,7 +27,7 @@ export default {
   },
   editVote: (id, vote) => {
     return new APIRequest(PUT, 'decision/'.concat(id, '/'), {value: vote});
-  }
+  },
 
   // Profile related
   uploadCV: (file) => {
