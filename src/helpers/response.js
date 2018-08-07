@@ -1,7 +1,5 @@
 export default class APIResponse {
   constructor(response) {
-    this.response = response;
-
     this.response = response.then((data) => {
       if (!data) {
           data = {};
@@ -14,7 +12,7 @@ export default class APIResponse {
     }).catch((error) => console.log(error));
   }
 
-  isError() {
+  hasError() {
     return this.isError;
   }
 
