@@ -2,15 +2,16 @@ export default class APIResponse {
   constructor(response) {
     this.response = response;
 
-    this.response.then((data) => {
+    this.response = response.then((data) => {
       if (!data) {
-        data = {};
+          data = {};
       }
 
       this.isError = !data.ok;
       this.status = data.status;
+      
       return (data.json)? data.json() : data;
-    });
+    }).catch((error) => console.log(error));
   }
 
   isError() {

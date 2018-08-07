@@ -20,9 +20,16 @@ export default {
   fetchOrganizations: () => {
     return new APIRequest(GET, 'organization/');
   },
+
+  // Voting related
   putVote: (post, vote) => {
     return new APIRequest(POST, 'decision/', {posting: post.id, value: vote});
   },
+  editVote: (id, vote) => {
+    return new APIRequest(PUT, 'decision/'.concat(id, '/'), {value: vote});
+  }
+
+  // Profile related
   uploadCV: (file) => {
     return new APIRequest(POSTFILE, 'cv/', {file: file});
   },

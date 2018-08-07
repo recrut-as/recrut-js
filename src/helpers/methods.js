@@ -39,13 +39,7 @@ export const del = (url, headers, data) => {
     method: 'DELETE',
     headers: headers,
     body: JSON.stringify(data),
-  })
-    .then((response) => {
-      return response.json();
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  });
 };
 
 export const postFile = (url, data) => {
