@@ -28,6 +28,9 @@ export default {
   editVote: (id, vote) => {
     return new APIRequest(PUT, 'decision/'.concat(id, '/'), {value: vote});
   },
+  deleteVote: (id) => {
+    return new APIRequest(DELETE, 'decision/'.concat(id, '/'));
+  },
 
   // Profile related
   uploadCV: (file) => {

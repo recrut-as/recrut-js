@@ -13,7 +13,7 @@ export default class APIResponse {
   }
 
   hasError() {
-    return this.isError;
+    return this.isError === true;
   }
 
   errorMessage() {
