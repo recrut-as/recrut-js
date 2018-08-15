@@ -88,10 +88,13 @@ export default {
   fetchTerms: () => {
     return new APIRequest(GET, 'consent/term/');
   },
+  fetchConsents: () => {
+    return new APIRequest(GET, 'consent/consent/');
+  },
   putConsent: (termId) => {
     return new APIRequest(POST, 'consent/consent/', {term: termId});
   },
   deleteConsent: (termId) => {
     return new APIRequest(DELETE, 'consent/consent/'.concat(termId, '/'));
-  }
+  },
 };
