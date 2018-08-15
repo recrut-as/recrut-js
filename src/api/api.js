@@ -18,7 +18,7 @@ export default {
     return new APIRequest(GET, 'account/me/');
   },
   fetchOrganizations: () => {
-    return new APIRequest(GET, 'organization/');
+    return new APIRequest(GET, 'company/');
   },
 
   // Voting related
@@ -64,23 +64,34 @@ export default {
     return new APIRequest(POST, 'account/password/', passwordData);
   },
 
-  // Sharing and messages
-  fetchSharings: () => {
-    return new APIRequest(GET, 'sharing/');
+  // Connections and messages
+  fetchConnections: () => {
+    return new APIRequest(GET, 'connection/');
   },
-  fetchSharing: (id) => {
-    return new APIRequest(GET, 'sharing/'.concat(id, '/'));
+  fetchConnection: (id) => {
+    return new APIRequest(GET, 'connection/'.concat(id, '/'));
   },
-  putSharing: (data) => {
-    return new APIRequest(POST, 'sharing/', data);
+  putConnection: (data) => {
+    return new APIRequest(POST, 'connection/', data);
   },
-  deleteSharing: (id) => {
-    return new APIRequest(DELETE, 'sharing/'.concat(id, '/'));
+  deleteConnection: (id) => {
+    return new APIRequest(DELETE, 'connection/'.concat(id, '/'));
   },
   putMessage: (data) => {
-    return new APIRequest(POST, 'message/', data);
+    return new APIRequest(POST, 'connection/message/', data);
   },
-  fetchShareable: () => {
-    return new APIRequest(GET, 'shareable/');
+  fetchUnconnected: () => {
+    return new APIRequest(GET, 'connection/companies/');
+  },
+
+  // Terms and consents
+  fetchTerms: () => {
+    return new APIRequest(GET, 'consent/term/');
+  },
+  putConsent: (termId) => {
+    return new APIRequest(POST, 'consent/consent/', {term: termId});
+  },
+  deleteConsent: (termId) => {
+    return new APIRequest(DELETE, 'consent/consent/'.concat(termId, '/'));
   }
 };

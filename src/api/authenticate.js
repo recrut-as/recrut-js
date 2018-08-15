@@ -61,7 +61,7 @@ export default {
         POST,
         'authenticate/token/refresh/',
         {
-          refresh: token.refresh(),
+          refresh_token: token.refresh(),
         },
         {
           options: [NO_AUTH],

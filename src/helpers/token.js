@@ -14,8 +14,8 @@ export default {
     return cookies.get(REFRESH_TOKEN_LOCATION);
   },
 
-  set(access, refresh) {
-    cookies.set(ACCESS_TOKEN_LOCATION, access, { path: '/', expires: new Date(Date.now() + 1000 * 60 * 60)});
+  set(access, refresh, expires_in=36000) {
+    cookies.set(ACCESS_TOKEN_LOCATION, access, { path: '/', expires: new Date(Date.now() + expires_in*1000)});
     cookies.set(REFRESH_TOKEN_LOCATION, refresh, { path: '/', expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365)});
   },
 

@@ -1,3 +1,5 @@
+import {tryRefresh} from '../helpers/methods';
+
 export default class APIResponse {
   constructor(response) {
     this.response = response.then((data) => {
@@ -7,6 +9,7 @@ export default class APIResponse {
 
       this.isError = !data.ok;
       this.status = data.status;
+      tryRefresh(data.status);
       
       return (data.json)? data.json() : data;
     }).catch((error) => console.log(error));
