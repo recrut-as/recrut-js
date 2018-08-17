@@ -48,6 +48,18 @@ export default {
   deleteProfileInfo: (dataType, data) => {
     return new APIRequest(DELETE, 'profile/'.concat(dataType, '/'), data);
   },
+  fetchDegrees: () => {
+    return new APIRequest(GET, 'profile/degree/');
+  },
+  fetchInstitutions: () => {
+    return new APIRequest(GET, 'profile/degree/institution/');
+  },
+  putMajor: (data) => {
+    return new APIRequest(POST, 'profile/degree/major/', data);
+  },
+  putInstitution: (data) => {
+    return new APIRequest(POST, 'profile/degree/institution/', data);
+  },
 
   // Can change account info with a file (profileImage)
   putAccountInfo: (data) => {
@@ -91,10 +103,10 @@ export default {
   fetchConsents: () => {
     return new APIRequest(GET, 'consent/consent/');
   },
-  putConsent: (termId) => {
-    return new APIRequest(POST, 'consent/consent/', {term: termId});
+  putConsent: (data) => {
+    return new APIRequest(POST, 'consent/consent/', {term: data});
   },
-  deleteConsent: (termId) => {
-    return new APIRequest(DELETE, 'consent/consent/'.concat(termId, '/'));
+  modifyConsent: (id, data) => {
+    return new APIRequest(PUT, 'consent/consent/'.concat(id, '/'), data);
   },
 };
