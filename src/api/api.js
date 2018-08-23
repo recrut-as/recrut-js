@@ -1,4 +1,4 @@
-import { POST, GET, PUT, DELETE, POSTFILE, PUTFILE } from '../helpers/methods';
+import { POST, GET, PUT, DELETE, POSTFILE, PUTFILE, DELETEFILE } from '../helpers/methods';
 import APIRequest from '../helpers/request';
 import { get } from 'http';
 
@@ -34,7 +34,10 @@ export default {
 
   // Profile related
   uploadCV: (file) => {
-    return new APIRequest(POSTFILE, 'cv/', {file: file});
+    return new APIRequest(POSTFILE, 'profile/cv/', {file: file});
+  },
+  deleteCV: (id) => {
+    return new APIRequest(DELETEFILE, 'profile/cv/'.concat(id,'/'));
   },
   fetchProfileInfo: () => {
     return new APIRequest(GET, 'profile/');
@@ -54,8 +57,17 @@ export default {
   fetchInstitutions: () => {
     return new APIRequest(GET, 'profile/degree/institution/');
   },
+  fetchMajors: () => {
+    return new APIRequest(GET, 'profile/degree/major/');
+  },
+  fetchMajor: (id) => {
+    return new APIRequest(GET, 'profile/degree/major/'.concat(id, '/'));
+  },
   putMajor: (data) => {
     return new APIRequest(POST, 'profile/degree/major/', data);
+  },
+  modifyMajor: (id, data) => {
+    return new APIRequest(PUT, 'profile/degree/major/'.concat(id, '/'), data);
   },
   putInstitution: (data) => {
     return new APIRequest(POST, 'profile/degree/institution/', data);

@@ -10,6 +10,7 @@ export const PUT = 'PUT';
 export const DELETE = 'DELETE';
 export const POSTFILE = 'POSTFILE';
 export const PUTFILE = 'PUTFILE';
+export const DELETEFILE = 'DELETEFILE';
 
 export const get = (url, headers, args) => {
   return fetch(url + FORMAT + args, {
@@ -44,24 +45,7 @@ export const del = (url, headers, data) => {
   });
 };
 
-export const postFile = (url, data) => {
-  // Set data
-  let fileData = new FormData();
-  for (let key in data) {
-    const k = key;
-    fileData.append(k, data[k]);
-  }
-
-  let request = new XMLHttpRequest('Authorization', 'token');
-  request.open('POST', url);
-  request.setRequestHeader('Authorization', 'Bearer ' + token.access());
-
-  // Send request
-  request.send(fileData);
-  return request;
-};
-
-export const putFile = (url, data) => {
+export const fileRequest = (method, url, data) => {
   // Set data
   let fileData = new FormData();
   for (let key in data) {
@@ -69,7 +53,7 @@ export const putFile = (url, data) => {
   }
 
   let request = new XMLHttpRequest('Authorization', 'token');
-  request.open('PUT', url);
+  request.open(method, url);
   request.setRequestHeader('Authorization', 'Bearer ' + token.access());
 
   // Send request

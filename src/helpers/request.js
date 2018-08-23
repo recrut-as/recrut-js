@@ -1,5 +1,5 @@
 import {NO_AUTH, BASE} from '../constants';
-import {get, post, put, del, postFile, putFile, GET, POST, PUT, DELETE, POSTFILE, PUTFILE} from './methods';
+import {get, post, put, del, fileRequest, GET, POST, PUT, DELETE, POSTFILE, PUTFILE, DELETEFILE} from './methods';
 import Token from './token';
 import APIResponse from './response';
 
@@ -40,9 +40,11 @@ export default class APIRequest {
     } else if (this.method === DELETE) {
       request = new APIResponse(del(BASE + this.url, this.headers, this.data));
     } else if (this.method === POSTFILE) {
-      return postFile(BASE + this.url, this.data);
+      return fileRequest(POST, BASE + this.url, this.data);
     } else if (this.method === PUTFILE) {
-      return putFile(BASE + this.url, this.data);
+      return fileRequest(PUT, BASE + this.url, this.data);
+    } else if (this.method === DELETEFILE) {
+      return fileRequest(DELETE, BASE + this.url);
     } else {
       return null;
     }
