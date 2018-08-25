@@ -5,6 +5,8 @@ const cookies = new Cookies();
 const ACCESS_TOKEN_LOCATION = 'access_token';
 const REFRESH_TOKEN_LOCATION = 'refresh_token';
 
+const INTERCOM_TOKEN_LOCATION = 'intercom-session-w7prdvjh';
+
 export default {
   access() {
     return cookies.get(ACCESS_TOKEN_LOCATION);
@@ -22,5 +24,6 @@ export default {
   remove() {
     cookies.remove(ACCESS_TOKEN_LOCATION, { path: '/' });
     cookies.remove(REFRESH_TOKEN_LOCATION, { path: '/' });
+    cookies.remove(INTERCOM_TOKEN_LOCATION, { path: '/'});
   },
 };

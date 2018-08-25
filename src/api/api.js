@@ -72,6 +72,9 @@ export default {
   putInstitution: (data) => {
     return new APIRequest(POST, 'profile/degree/institution/', data);
   },
+  fetchFilters: () => {
+    return new APIRequest(GET, 'posting/filter/');
+  },
 
   // Can change account info with a file (profileImage)
   putAccountInfo: (data) => {
