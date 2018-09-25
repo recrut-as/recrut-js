@@ -102,20 +102,25 @@ export default {
 
   // Connections and messages
   fetchConnections: () => {
-    return new APIRequest(GET, 'connection/companies/');
+    return new APIRequest(GET, 'connection/student/');
   },
   fetchConnection: (id) => {
-    return new APIRequest(GET, 'connection/companies/'.concat(id, '/'));
+    return new APIRequest(GET, 'connection/student/'.concat(id, '/'));
   },
   putConnection: (data) => {
-    return new APIRequest(POST, 'connection/companies/', data);
+    return new APIRequest(POST, 'connection/student/', data);
   },
   deleteConnection: (id) => {
-    return new APIRequest(DELETE, 'connection/companies/'.concat(id, '/'));
+    return new APIRequest(DELETE, 'connection/student/'.concat(id, '/'));
   },
   putMessage: (data) => {
     return new APIRequest(POST, 'connection/message/', data);
   },
+  fetchConnectedStudents: () => {
+    return new APIRequest(GET, 'connection/representative/');
+  },
+
+  // DEPRECATED
   fetchUnconnected: () => {
     return new APIRequest(GET, 'connection/companies/');
   },
