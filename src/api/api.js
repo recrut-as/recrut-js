@@ -138,4 +138,9 @@ export default {
   modifyConsent: (id, data) => {
     return new APIRequest(PUT, 'consent/consent/'.concat(id, '/'), data);
   },
+
+  // Representative info
+  getRepresentativeInfo: () => {
+    return new APIRequest(GET, 'representative/');
+  },
 };
