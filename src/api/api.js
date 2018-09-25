@@ -11,14 +11,17 @@ export default {
   fetchPostings: (query) => {
     return new APIRequest(GET, 'posting/', query);
   },
-  fetchVotes: () => {
-    return new APIRequest(GET, 'decision/');
+  fetchVotes: (page=1) => {
+    return new APIRequest(GET, 'decision/', {page: page});
   },
   fetchProfile: () => {
     return new APIRequest(GET, 'account/me/');
   },
   fetchOrganizations: () => {
     return new APIRequest(GET, 'company/');
+  },
+  fetchPartners: () => {
+    return new APIRequest(GET, 'company/partner/');
   },
 
   // Voting related
@@ -90,19 +93,25 @@ export default {
   changePassword: (passwordData) => {
     return new APIRequest(POST, 'account/password/', passwordData);
   },
+  resetPassword: (email) => {
+    return new APIRequest(POST,'account/password/reset/', {email: email});
+  },
+  confirmPasswordReset: (uid, token, newPassword) => {
+    return new APIRequest(POST,'account/password/reset/confirm/', {uid: uid, token: token, new_password: newPassword});
+  },
 
   // Connections and messages
   fetchConnections: () => {
-    return new APIRequest(GET, 'connection/');
+    return new APIRequest(GET, 'connection/companies/');
   },
   fetchConnection: (id) => {
-    return new APIRequest(GET, 'connection/'.concat(id, '/'));
+    return new APIRequest(GET, 'connection/companies/'.concat(id, '/'));
   },
   putConnection: (data) => {
-    return new APIRequest(POST, 'connection/', data);
+    return new APIRequest(POST, 'connection/companies/', data);
   },
   deleteConnection: (id) => {
-    return new APIRequest(DELETE, 'connection/'.concat(id, '/'));
+    return new APIRequest(DELETE, 'connection/companies/'.concat(id, '/'));
   },
   putMessage: (data) => {
     return new APIRequest(POST, 'connection/message/', data);

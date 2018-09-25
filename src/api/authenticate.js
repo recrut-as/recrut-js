@@ -84,4 +84,17 @@ export default {
       }
     );
   },
+
+  regEmail: (email, company) => {
+    return new APIRequest(
+      POST,
+      'authenticate/email/'.concat('?company=', company),
+      {
+        email: email
+      },
+      {
+        options: [NO_AUTH],
+      }
+    )
+  },
 };

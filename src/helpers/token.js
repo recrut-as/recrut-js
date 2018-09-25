@@ -26,4 +26,9 @@ export default {
     cookies.remove(REFRESH_TOKEN_LOCATION, { path: '/' });
     cookies.remove(INTERCOM_TOKEN_LOCATION, { path: '/'});
   },
+
+  setWithPath(access, refresh, domain, expires_in=36000) {
+    cookies.set(ACCESS_TOKEN_LOCATION, access, { path: '/', domain: domain, expires: new Date(Date.now() + expires_in*1000)});
+    cookies.set(REFRESH_TOKEN_LOCATION, refresh, { path: '/', domain: domain, expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 365)});
+  },
 };
