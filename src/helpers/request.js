@@ -21,6 +21,7 @@ export default class APIRequest {
 
   response() {
     let request = null;
+    const hasAuth = data.headers.has('Authorization');
     if (this.method === GET) {
       let args = '';
       for (let key in this.data) {
@@ -32,13 +33,13 @@ export default class APIRequest {
           args += '&' + key + '=' + this.data[key];
         }
       }
-      request = new APIResponse(get(BASE + this.url, this.headers, args));
+      request = new APIResponse(get(BASE + this.url, this.headers, args), hasAuth);
     } else if (this.method === POST) {
-      request = new APIResponse(post(BASE + this.url, this.headers, this.data));
+      request = new APIResponse(post(BASE + this.url, this.headers, this.data), hasAuth);
     } else if (this.method === PUT) {
-      request = new APIResponse(put(BASE + this.url, this.headers, this.data));
+      request = new APIResponse(put(BASE + this.url, this.headers, this.data), hasAuth);
     } else if (this.method === DELETE) {
-      request = new APIResponse(del(BASE + this.url, this.headers, this.data));
+      request = new APIResponse(del(BASE + this.url, this.headers, this.data), hasAuth);
     } else if (this.method === POSTFILE) {
       return fileRequest(POST, BASE + this.url, this.data);
     } else if (this.method === PUTFILE) {

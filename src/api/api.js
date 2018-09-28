@@ -116,7 +116,7 @@ export default {
   putMessage: (data) => {
     return new APIRequest(POST, 'connection/message/', data);
   },
-  fetchConnectedStudents: (page) => {
+  fetchConnectedStudents: (page=1) => {
     return new APIRequest(GET, 'connection/representative/', {page: page});
   },
 

@@ -1,18 +1,15 @@
 import {tryRefresh} from '../helpers/methods';
 
 export default class APIResponse {
-  constructor(response) {
+  constructor(response, withAuth = true) {
     this.response = response.then((data) => {
-      if (!data) {
-          data = {};
-      }
+      data = data || {};
 
       this.isError = !data.ok;
       this.status = data.status;
-      if(data.headers['Authorization']) {
-        tryRefresh(data.status);
-      }
-      
+     if (withAuth === true) {
+      tryRefresh(data.status);
+     }
       
       return (data.json)? data.json() : data;
     }).catch((error) => console.log(error));
