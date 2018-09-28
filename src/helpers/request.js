@@ -21,7 +21,7 @@ export default class APIRequest {
 
   response() {
     let request = null;
-    const hasAuth = data.headers.has('Authorization');
+    const hasAuth = this.headers.has('Authorization');
     if (this.method === GET) {
       let args = '';
       for (let key in this.data) {
